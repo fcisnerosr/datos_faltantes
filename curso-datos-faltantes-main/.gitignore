@@ -1,0 +1,59 @@
+# Archivos de Python compilados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+env/
+*.venv/
+Pipfile
+Pipfile.lock
+
+# Archivos de configuración de Jupyter Notebook
+.ipynb_checkpoints/
+
+# Datos sensibles o grandes
+*.csv
+*.json
+*.xlsx
+*.h5
+*.parquet
+*.feather
+*.msgpack
+*.dta
+*.pkl
+*.sav
+*.tar
+*.zip
+*.gz
+*.bz2
+*.xz
+*.npy
+*.npz
+
+# Modelos entrenados y cachés
+*.h5
+*.joblib
+*.pkl
+*.onnx
+mlruns/
+wandb/
+
+# Configuración de logs y ejecución
+logs/
+*.log
+*.out
+*.err
+
+# Configuración de IDEs y editores
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Archivos de control de versiones
+.DS_Store
+*.bak
+*.swp
+*.swo
