@@ -1,4 +1,4 @@
-#!/home/fcisnerosr/datos_faltantes/curso-datos-faltantes-main/env/bin/python3
+#!/home/fcisnerosr/Documents/datos_faltantes/curso-datos-faltantes-main/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
