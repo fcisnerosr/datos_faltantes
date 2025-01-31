@@ -40,6 +40,7 @@ print(riskfactors_df.missing.missing_variable_table())  # Imprime una tabla que 
 #   - La cantidad de valores completos.
 #   - El porcentaje de completitud (valores completos / total de valores)
 #  # La función devuelve una tabla resumen que facilita la identificación de patrones de datos faltantes en el DataFrame.
+
 print((
     riskfactors_df
     .missing
