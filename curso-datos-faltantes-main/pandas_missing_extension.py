@@ -64,14 +64,25 @@ class MissingMethods:
             .sort_values("pct_variables", ascending=False)
         ) 
 
-    def missing_case_table(self) -> pd.DataFrame():
+    #  def missing_case_table(self) -> pd.DataFrame():
+    #      return (
+    #          self._obj.missing.missing_case_summary()
+    #          .value_counts("n_missing")
+    #          .reset_index()
+    #          .rename(columns={"n_missing": "n_missing_in_case", 0: "n_cases"})
+    #          .assign(pct_case=lambda df: df.n_cases / df.n_cases.sum() * 100)
+    #          .sort_values("pct_case", ascending=False)
+    #      )
+
+    def missing_case_table(self) -> pd.DataFrame:
         return (
             self._obj.missing.missing_case_summary()
-            .value_counts("n_missing")
+            .value_counts(subset=["n_missing"])  # Se agrupa por el número de valores faltantes
+            .to_frame(name="n_cases")  # Convierte a DataFrame y asigna nombre a la columna
             .reset_index()
-            .rename(columns={"n_missing": "n_missing_in_case", 0: "n_cases"})
-            .assign(pct_case=lambda df: df.n_cases / df.n_cases.sum() * 100)
-            .sort_values("pct_case", ascending=False)
+            .rename(columns={"n_missing": "n_missing_in_case"})  # Renombra columna correctamente
+            .assign(pct_case=lambda df: (df["n_cases"] / df["n_cases"].sum() * 100).astype(float))  # Calcula porcentaje
+            .sort_values("pct_case", ascending=False)  # Ordena por porcentaje descendente
         )
 
     def missing_variable_span(self, variable: str, span_every: int) -> pd.DataFrame:

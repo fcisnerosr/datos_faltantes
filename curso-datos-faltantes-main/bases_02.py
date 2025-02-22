@@ -18,7 +18,8 @@ output_path = "./data/prima_indians-diabetes.csv"
 
 subprocess.run(["wget", "-O", output_path, pima_indians_diabetes_url, "-q"])
 
-diabetes_df = pd.read_csv('~/Documents/datos_faltantes/curso-datos-faltantes-main/data/pima-indians-diabetes.csv',
+#  diabetes_df = pd.read_csv('~/Documents/datos_faltantes/curso-datos-faltantes-main/data/pima-indians-diabetes.csv',
+diabetes_df = pd.read_csv('~/datos_faltantes/curso-datos-faltantes-main/data/pima-indians-diabetes.csv',
     sep=',',
     names = [
         "pregnancies",
