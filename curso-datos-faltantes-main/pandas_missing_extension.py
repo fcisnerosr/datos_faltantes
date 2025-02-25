@@ -2,6 +2,8 @@ import itertools
 import pandas as pd
 import upsetplot
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 try:
     del pd.DataFrame.missing
@@ -169,23 +171,38 @@ class MissingMethods:
 
     # Plotting functions ---
 
+    #  def missing_variable_plot(self):
+    #      df = self._obj.missing.missing_variable_summary().sort_values("n_missing")
+    #
+    #      plot_range = range(1, len(df.index) + 1)
+    #
+    #      plt.hlines(y=plot_range, xmin=0, xmax=df.n_missing, color="black")
+    #
+    #      plt.plot(df.n_missing, plot_range, "o", color="black")
+    #
+    #      plt.yticks(plot_range, df.variable)
+    #
+    #      plt.grid(axis="y")
+    #
+    #      plt.xlabel("Number missing")
+    #      plt.ylabel("Variable")
+
     def missing_variable_plot(self):
         df = self._obj.missing.missing_variable_summary().sort_values("n_missing")
 
-        plot_range = range(1, len(df.index) + 1)
+        plot_range = np.arange(1, len(df.index) + 1)  # Convertir a NumPy array
+        n_missing_values = df.n_missing.to_numpy()  # Convertir a NumPy array
 
-        plt.hlines(y=plot_range, xmin=0, xmax=df.n_missing, color="black")
-
-        plt.plot(df.n_missing, plot_range, "o", color="black")
+        plt.hlines(y=plot_range, xmin=0, xmax=n_missing_values, color="black")
+        plt.plot(n_missing_values, plot_range, "o", color="black")
 
         plt.yticks(plot_range, df.variable)
-
         plt.grid(axis="y")
 
         plt.xlabel("Number missing")
         plt.ylabel("Variable")
+        plt.show()  # Asegurar que la gráfica se muestre correctamente
 
-    def missing_case_plot(self):
 
         df = self._obj.missing.missing_case_summary()
 
@@ -194,6 +211,18 @@ class MissingMethods:
         plt.grid(axis="x")
         plt.xlabel("Number of missings in case")
         plt.ylabel("Number of cases")
+
+    def missing_case_plot(self):
+        df = self._obj.missing.missing_case_summary().plot(
+            kind='hist',
+            x='case',
+            y='pct_missing',
+            bins=15
+        )
+
+        plt.xlabel("Number of missings in case")  
+        plt.ylabel("Number of cases")  
+        plt.show()
 
     def missing_variable_span_plot(
         self, variable: str, span_every: int, rot: int = 0, figsize=None

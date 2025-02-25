@@ -1,6 +1,8 @@
 import pandas as pd
 from bases_02 import riskfactors_df
 import pandas_missing_extension
+import seaborn as sns
+import matplotlib.pyplot as plt
 import os
 
 #  os.system('clear')
@@ -54,3 +56,16 @@ print((
 # La tabla muestra, para cada racha:
 #   - El tipo de racha (faltante o completo).
 #   - La longitud de la racha actual.
+
+#  riskfactors_df.missing.missing_variable_plot()
+riskfactors_df.missing.missing_case_plot()
+
+#  riskfactors_df.missing.missing_case_summary().plot(
+#      kind='hist',
+#      x='case',
+#      y='pct_missing',
+#      bins=15
+#  )
+#  plt.xlabel("Number of missings in case")  # Cambia el nombre del eje x
+#  plt.ylabel("Number of cases")  # Cambia el nombre del eje y
+#  plt.show()
