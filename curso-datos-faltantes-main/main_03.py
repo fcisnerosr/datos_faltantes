@@ -4,6 +4,7 @@ import pandas_missing_extension
 import seaborn as sns
 import matplotlib.pyplot as plt
 import os
+import missingno as msno
 
 #  os.system('clear')
 
@@ -58,8 +59,7 @@ print((
 #   - La longitud de la racha actual.
 
 #  riskfactors_df.missing.missing_variable_plot()
-riskfactors_df.missing.missing_case_plot()
-
+#  riskfactors_df.missing.missing_case_plot() # No está bien graficado
 #  riskfactors_df.missing.missing_case_summary().plot(
 #      kind='hist',
 #      x='case',
@@ -69,3 +69,12 @@ riskfactors_df.missing.missing_case_plot()
 #  plt.xlabel("Number of missings in case")  # Cambia el nombre del eje x
 #  plt.ylabel("Number of cases")  # Cambia el nombre del eje y
 #  plt.show()
+
+#  riskfactors_df.missing.missing_variable_span_plot(
+#          variable = 'weight_lbs',
+#          span_every = 10,
+#          rot = 0
+#          )
+
+msno.bar(df = riskfactors_df)
+plt.show()

@@ -252,6 +252,7 @@ class MissingMethods:
         plt.grid(False)
         plt.margins(0)
         plt.tight_layout(pad=0)
+        plt.show()
 
     def missing_upsetplot(self, variables: list[str] = None, **kwargs):
 
