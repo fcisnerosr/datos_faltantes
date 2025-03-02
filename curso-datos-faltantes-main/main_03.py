@@ -76,5 +76,10 @@ print((
 #          rot = 0
 #          )
 
-msno.bar(df = riskfactors_df)
+# Falta integrar todas las graficas al sheet.md y además falta explicar desde .matrix
+#  msno.bar(df = riskfactors_df)
+#  msno.matrix(df = riskfactors_df)
+#  riskfactors_df.missing.missing_upsetplot(variables = None, element_size = 60)
+#  riskfactors_df.missing.missing_upsetplot(variables = ['pregnant', 'weight_lbs', 'smoke_stop'], element_size = 60)
+msno.heatmap(df = riskfactors_df)
 plt.show()
