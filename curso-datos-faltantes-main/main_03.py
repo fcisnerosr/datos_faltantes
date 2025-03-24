@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from bases_02 import riskfactors_df
 import pandas_missing_extension
 import seaborn as sns
@@ -81,5 +82,80 @@ print((
 #  msno.matrix(df = riskfactors_df)
 #  riskfactors_df.missing.missing_upsetplot(variables = None, element_size = 60)
 #  riskfactors_df.missing.missing_upsetplot(variables = ['pregnant', 'weight_lbs', 'smoke_stop'], element_size = 60)
-msno.heatmap(df = riskfactors_df)
-plt.show()
+#  msno.heatmap(df = riskfactors_df)
+#  plt.show()
+
+common_na_strings = (
+    "missing",
+    "NA",
+    "N A",
+    "N/A",
+    "#N/A",
+    "NA ",
+    "N/A ",
+    " N/A",
+    "N / A ",
+    "na",
+    "na  ",
+    "n/a",
+    "na  ",
+    "na   ",
+    "n  / a",
+    "n / a",
+    "NULL",
+    "null",
+    "",
+    "?",
+    "*",
+    ".",
+)
+
+common_na_numbers = (-9, -99, -999, -9999, 999, 66, 77, 88, -1)
+
+missing_data_example_df = pd.DataFrame.from_dict(
+    dict(
+        x = [1, 3, "NA", -99, -98, -99],
+        y = ["A", "N/A", "NA", "E", "F", "G"],
+        z = [-100, -99, -98, -101, -1, -1]
+    )
+)
+
+print(missing_data_example_df)
+print(missing_data_example_df.missing.number_missing())
+print(missing_data_example_df.dtypes)
+print(missing_data_example_df.x.unique())
+
+# Revisar valores únicos de los datos
+print((
+    missing_data_example_df
+    .select_dtypes(object)
+    .apply(pd.unique)
+))
+
+# Sustituyendo valores comúnmente asociados a valores faltantes
+# Sustitución desde la lectura de los datos
+dataframe_viejo = pd.read_csv('./data/missing_data_enconding_example.csv')
+print(dataframe_viejo)
+
+#  dataframe_filtrado = pd.read_csv(
+#      "./data/missing_data_enconding_example.csv",
+#      na_filter=True,
+#      na_values = [-99, -1]
+#  )
+#  print(dataframe_filtrado)
+
+# Sustitución global
+#  data_sustitucion = (
+#      missing_data_example_df
+#      .replace(
+#          to_replace=[-99, 'NA', 'N/A'],
+#          value=np.nan
+#          )
+#      )
+#  print(data_sustitucion)
+
+data_sustitucion = pd.read_csv('./data/missing_data_enconding_example.csv', na_values=['NA', 'N/A', -99, -1, -98, -101, -100])
+print(data_sustitucion)
+
+# Sustitución dirigida
+
