@@ -120,42 +120,54 @@ missing_data_example_df = pd.DataFrame.from_dict(
     )
 )
 
-print(missing_data_example_df)
-print(missing_data_example_df.missing.number_missing())
-print(missing_data_example_df.dtypes)
-print(missing_data_example_df.x.unique())
+#  print(missing_data_example_df)
+#  print(missing_data_example_df.missing.number_missing())
+#  print(missing_data_example_df.dtypes)
+#  print(missing_data_example_df.x.unique())
 
 # Revisar valores únicos de los datos
-print((
-    missing_data_example_df
-    .select_dtypes(object)
-    .apply(pd.unique)
-))
+#  print((
+#      missing_data_example_df
+#      .select_dtypes(object)
+#      .apply(pd.unique)
+#  ))
 
 # Sustituyendo valores comúnmente asociados a valores faltantes
 # Sustitución desde la lectura de los datos
 dataframe_viejo = pd.read_csv('./data/missing_data_enconding_example.csv')
+print('dataframe viejo')
 print(dataframe_viejo)
 
-#  dataframe_filtrado = pd.read_csv(
-#      "./data/missing_data_enconding_example.csv",
-#      na_filter=True,
-#      na_values = [-99, -1]
-#  )
-#  print(dataframe_filtrado)
+dataframe_filtrado = pd.read_csv(
+    "./data/missing_data_enconding_example.csv",
+    na_values = [-99, -1]
+)
+print('dataframe nuevo')
+print(dataframe_filtrado)
 
-# Sustitución global
-#  data_sustitucion = (
-#      missing_data_example_df
-#      .replace(
-#          to_replace=[-99, 'NA', 'N/A'],
-#          value=np.nan
-#          )
-#      )
-#  print(data_sustitucion)
+# Sustitución global de valores a NaN
+data_sustitucion = (
+    missing_data_example_df
+    .replace(
+        to_replace=[-99, 'NA', 'N/A'],
+        value=np.nan
+        )
+    )
+print(data_sustitucion)
 
 data_sustitucion = pd.read_csv('./data/missing_data_enconding_example.csv', na_values=['NA', 'N/A', -99, -1, -98, -101, -100])
 print(data_sustitucion)
 
-# Sustitución dirigida
+# Sustitución dirigida (aplicado a una columna en específico)
+data_dirigido = (
+        missing_data_example_df
+        .replace(
+            to_replace={
+                'x': {
+                    -99: np.nan
+                    }
+                }
+            )
+        )
+print(data_dirigido)
 
