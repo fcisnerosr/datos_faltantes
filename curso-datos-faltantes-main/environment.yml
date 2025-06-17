@@ -1,16 +1,10 @@
-name: datos_faltantes # Puedes cambiar este nombre por uno de tu preferencia
+name: datos_faltantes
 channels:
-  - conda-forge # Un canal común donde se encuentran muchas de estas librerías
-  - defaults  # El canal por defecto de anaconda/miniconda
+  - conda-forge
+  - defaults
 dependencies:
-  # Asegúrate de tener Python
-  - python=3.9 # O la versión de Python que necesites
-
-  # Paquete necesario para crear el kernel de Jupyter
+  - python=3.9
   - ipykernel
-
-  # Librerías de tu requirements.txt, especificando versiones donde sea necesario
-  # Intentamos instalarlas con conda/mamba si están disponibles
   - pyjanitor
   - missingno
   - numpy=1.24.4
@@ -20,9 +14,6 @@ dependencies:
   - seaborn
   - session-info
   - upsetplot=0.6.1
-
-  # Si alguna de las librerías anteriores no se encontrara en los canales de conda/mamba,
-  # o si prefieres asegurarte de usar pip para alguna, podrías usar la sección pip:
-  # - pip:
-  #   - nombre_de_la_libreria # Descomenta y añade aquí si es necesario
-  #   - otra_libreria==X.Y
+  - kaggle
+  # Aquí ya NO va pyfilesystem2 si vas a usar pathlib
+  # pathlib es parte de la librería estándar de Python, no necesita ser listada como dependencia externa
