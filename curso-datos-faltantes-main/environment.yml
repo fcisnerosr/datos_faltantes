@@ -15,5 +15,4 @@ dependencies:
   - session-info
   - upsetplot=0.6.1
   - kaggle
-  # Aquí ya NO va pyfilesystem2 si vas a usar pathlib
-  # pathlib es parte de la librería estándar de Python, no necesita ser listada como dependencia externa
+  - fs
