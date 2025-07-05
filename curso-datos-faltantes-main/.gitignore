@@ -15,8 +15,6 @@ Pipfile.lock
 .ipynb_checkpoints/
 
 # Datos sensibles o grandes
-*.csv
-*.json
 *.xlsx
 *.h5
 *.parquet

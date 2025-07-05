@@ -1,0 +1,21 @@
+Nombre,Edad,Grado,Promedio,Faltas,Tutor,Comedor,Actividades,Calificaciones_Matematicas,Calificaciones_Espanol
+Ana,13,1°,8.5,2,Sr. López,Sí,Fútbol,8,9
+Luis,14,2°,9,0,Sra. Díaz,No,NA,9,10
+Carlos,13,2°,7.8,3,Sr. Ramírez,Sí,Artes,7,8
+N/A,15,3°,NA,,N/A,NA,,n/a,missing
+Mónica,,2°,8.9,NA,NA,n/a,Música,10,9
+Jorge,14,1°,,1,missing,,missing,6,NA
+Sofía,13,3°,7.5,missing,,,,7,
+Pedro,NA,3°,9.1,0,Sr. Peña,Sí,Teatro,,
+,12,2°,n/a,4,,No,n/a,,n/a
+Laura,14,1°,8,,n/a,Sí,Fútbol,8,8
+Iván,13,2°,7.9,n/a,Sra. Gómez,missing,Robótica,missing,9
+Camila,n/a,1°,missing,1,Sra. Ruiz,No,,9,7
+Diego,15,,,2,NA,Sí,Fútbol,NA,8
+María,14,n/a,8.3,0,Sr. Pérez,No,NA,7,9
+Andrés,,3°,8.1,3,Sra. León,Sí,Teatro,6,10
+NA,13,,8.2,1,n/a,Sí,,8,n/a
+Valeria,missing,1°,9,,Sra. Torres,No,Música,10,NA
+Raúl,14,2°,,1,,NA,n/a,NA,6
+Andrea,,NA,7.8,0,Sr. Soto,n/a,Robótica,,
+,13,3°,8.4,2,,Sí,Fútbol,9,9
