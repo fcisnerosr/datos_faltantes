@@ -1,101 +1,101 @@
 ID_Participante,Genero,Ciudad,Nivel_Educacion,Edad_Exacta,Ingresos_Mensuales,Opinion_Controversial,Horas_Trabajadas_Semana,Frecuencia_Ejercicio
-1,Hombre,Ciudad A,Posgrado,55,50061,,49,Mensual
-2,Mujer,Ciudad A,Universidad,58,25239,En Contra,38,Diario
-3,Hombre,Ciudad B,Primaria,55,25495,A Favor,59,Diario
-4,Otro,Ciudad A,Universidad,26,135890,Indeciso,46,Diario
-5,Hombre,Ciudad B,Universidad,50,103738,,35,Semanal
-6,Hombre,Ciudad A,Secundaria,25,26315,A Favor,49,Diario
-7,Mujer,Ciudad C,Universidad,60,74816,A Favor,44,Semanal
-8,Hombre,Ciudad C,Universidad,60,44677,A Favor,34,Diario
-9,Mujer,Ciudad A,Universidad,58,104081,,58,Mensual
-10,Mujer,Ciudad D,Universidad,62,59517,En Contra,45,Diario
-11,Mujer,Ciudad A,Secundaria,23,82272,A Favor,40,Mensual
-12,Hombre,Ciudad D,Universidad,24,138457,A Favor,33,Nunca
-13,Hombre,Ciudad B,Posgrado,60,86499,,20,Mensual
-14,Hombre,Ciudad D,Universidad,18,36536,En Contra,48,Diario
-15,Mujer,Ciudad B,Secundaria,38,57406,,47,Semanal
-16,Hombre,Ciudad C,Secundaria,65,123494,En Contra,44,Semanal
-17,Mujer,Ciudad A,Universidad,69,36705,A Favor,48,Nunca
-18,Mujer,Ciudad A,Universidad,18,122013,Indeciso,49,Semanal
-19,Hombre,Ciudad B,Universidad,57,67995,Indeciso,21,Diario
-20,Hombre,Ciudad D,Posgrado,70,70746,Indeciso,25,Nunca
-21,Otro,Ciudad C,Secundaria,46,50263,Indeciso,58,Nunca
-22,Mujer,Ciudad A,Secundaria,22,32387,En Contra,53,Mensual
-23,Hombre,Ciudad B,Universidad,40,88702,En Contra,54,Mensual
-24,Mujer,Ciudad B,Universidad,31,138396,Indeciso,50,Nunca
-25,Mujer,Ciudad C,Posgrado,53,142283,,36,Mensual
-26,Hombre,Ciudad B,Posgrado,61,30494,A Favor,43,Nunca
-27,Hombre,Ciudad A,Universidad,50,128791,En Contra,56,Semanal
-28,Hombre,Ciudad A,Universidad,65,77949,Indeciso,39,Semanal
-29,Mujer,Ciudad B,Universidad,22,38486,Indeciso,48,Semanal
-30,Mujer,Ciudad C,Secundaria,57,82591,Indeciso,30,Semanal
-31,Otro,Ciudad B,Secundaria,64,149982,En Contra,53,Mensual
-32,Hombre,Ciudad C,Posgrado,24,66648,En Contra,41,Mensual
-33,Mujer,Ciudad A,Secundaria,30,127528,Indeciso,58,Diario
-34,Hombre,Ciudad A,Universidad,64,80407,En Contra,39,Mensual
-35,Hombre,Ciudad C,Universidad,45,50871,,52,Nunca
-36,Hombre,Ciudad B,Universidad,33,99419,Indeciso,38,Diario
-37,Mujer,Ciudad B,Universidad,50,55101,,26,Diario
-38,Mujer,Ciudad B,Posgrado,38,140922,Indeciso,58,Mensual
-39,Hombre,Ciudad B,Universidad,47,77498,,48,Nunca
-40,Mujer,Ciudad A,Universidad,29,143725,A Favor,29,Diario
-41,Mujer,Ciudad A,Posgrado,63,116968,A Favor,24,Mensual
-42,Otro,Ciudad D,Secundaria,26,39515,Indeciso,51,Mensual
-43,Hombre,Ciudad B,Posgrado,23,109077,En Contra,50,Nunca
-44,Mujer,Ciudad A,Secundaria,67,100555,En Contra,27,Mensual
-45,Hombre,Ciudad C,Secundaria,34,132034,,55,Nunca
-46,Hombre,Ciudad C,Posgrado,41,114452,Indeciso,47,Diario
-47,Mujer,Ciudad D,Posgrado,60,142398,,27,Mensual
-48,Hombre,Ciudad B,Posgrado,55,125594,En Contra,29,Semanal
-49,Hombre,Ciudad A,Secundaria,62,51343,A Favor,37,Nunca
-50,Mujer,Ciudad B,Universidad,63,21565,,47,Mensual
-51,Hombre,Ciudad B,Universidad,28,141212,,40,Mensual
-52,Hombre,Ciudad A,Secundaria,66,81473,,48,Semanal
-53,Mujer,Ciudad D,Posgrado,42,112345,A Favor,26,Mensual
-54,Mujer,Ciudad C,Primaria,22,127944,Indeciso,41,Mensual
-55,Mujer,Ciudad D,Posgrado,53,142008,A Favor,26,Semanal
-56,Hombre,Ciudad C,Posgrado,40,148564,,52,Nunca
-57,Mujer,Ciudad B,Universidad,24,58523,A Favor,28,Diario
-58,Hombre,Ciudad B,Universidad,49,93760,A Favor,44,Nunca
-59,Hombre,Ciudad B,Posgrado,68,26734,En Contra,27,Diario
-60,Hombre,Ciudad D,Primaria,54,104729,,59,Diario
-61,Otro,Ciudad B,Universidad,38,136447,,52,Semanal
-62,Hombre,Ciudad A,Universidad,55,127858,A Favor,34,Semanal
-63,Otro,Ciudad B,Universidad,68,94910,En Contra,25,Semanal
-64,Mujer,Ciudad B,Posgrado,41,81781,En Contra,32,Semanal
-65,Mujer,Ciudad A,Primaria,56,76057,,28,Nunca
-66,Mujer,Ciudad A,Secundaria,25,116634,,36,Diario
-67,Hombre,Ciudad A,Universidad,41,126684,A Favor,30,Diario
-68,Mujer,Ciudad B,Posgrado,43,131119,,43,Diario
-69,Hombre,Ciudad C,Posgrado,48,27517,Indeciso,36,Semanal
-70,Hombre,Ciudad C,Universidad,67,45247,En Contra,56,Nunca
-71,Hombre,Ciudad C,Posgrado,26,114459,En Contra,24,Semanal
-72,Otro,Ciudad B,Posgrado,56,68950,A Favor,44,Nunca
-73,Otro,Ciudad B,Secundaria,55,110181,,55,Mensual
-74,Hombre,Ciudad B,Secundaria,21,29390,A Favor,32,Nunca
-75,Hombre,Ciudad C,Universidad,60,28305,En Contra,42,Diario
-76,Mujer,Ciudad D,Primaria,56,73845,A Favor,29,Diario
-77,Hombre,Ciudad D,Secundaria,68,93489,En Contra,38,Nunca
-78,Hombre,Ciudad B,Posgrado,27,90619,,49,Diario
-79,Mujer,Ciudad D,Universidad,36,113500,A Favor,45,Nunca
-80,Hombre,Ciudad D,Posgrado,60,88390,,44,Diario
-81,Mujer,Ciudad A,Posgrado,37,36380,A Favor,56,Mensual
-82,Hombre,Ciudad B,Universidad,27,21939,En Contra,23,Nunca
-83,Hombre,Ciudad A,Universidad,36,135050,Indeciso,21,Semanal
-84,Mujer,Ciudad A,Universidad,38,36301,A Favor,30,Mensual
-85,Mujer,Ciudad B,Universidad,40,71223,Indeciso,24,Diario
-86,Hombre,Ciudad A,Primaria,32,59217,,32,Mensual
-87,Otro,Ciudad D,Secundaria,47,94464,,56,Diario
-88,Mujer,Ciudad D,Posgrado,36,39745,,46,Nunca
-89,Mujer,Ciudad B,Universidad,28,147913,,48,Diario
-90,Hombre,Ciudad A,Secundaria,41,87235,En Contra,47,Mensual
-91,Hombre,Ciudad D,Posgrado,63,51479,En Contra,52,Diario
-92,Mujer,Ciudad D,Posgrado,43,49466,,60,Mensual
-93,Hombre,Ciudad B,Universidad,59,62276,Indeciso,42,Semanal
-94,Hombre,Ciudad C,Posgrado,18,28146,En Contra,47,Diario
-95,Hombre,Ciudad D,Universidad,51,134102,Indeciso,52,Nunca
-96,Hombre,Ciudad B,Posgrado,39,40371,En Contra,47,Mensual
-97,Otro,Ciudad B,Posgrado,34,56388,Indeciso,38,Semanal
-98,Hombre,Ciudad D,Universidad,34,30200,A Favor,44,Diario
-99,Hombre,Ciudad C,Secundaria,40,130090,,32,Nunca
-100,Hombre,Ciudad A,Posgrado,61,143133,En Contra,50,Semanal
+1,Otro,Ciudad C,Posgrado,67,81952,,48,Semanal
+2,Mujer,Ciudad D,Universidad,46,20763,A Favor,37,Mensual
+3,Otro,Ciudad D,Universidad,58,68991,Indeciso,43,Diario
+4,Hombre,Ciudad B,Secundaria,21,149203,,52,Mensual
+5,Mujer,Ciudad D,Universidad,19,61333,A Favor,50,Nunca
+6,Mujer,Ciudad C,Universidad,47,79334,A Favor,47,Semanal
+7,Otro,Ciudad A,Universidad,53,60829,Indeciso,40,Diario
+8,Mujer,Ciudad A,Posgrado,35,137183,Indeciso,51,Mensual
+9,Hombre,Ciudad A,Universidad,35,124952,A Favor,35,Nunca
+10,Hombre,Ciudad D,Posgrado,26,37972,,27,Mensual
+11,Mujer,Ciudad A,Posgrado,68,25755,En Contra,34,Semanal
+12,Mujer,Ciudad D,Secundaria,31,28813,Indeciso,42,Diario
+13,Mujer,Ciudad D,Universidad,55,41672,En Contra,29,Mensual
+14,Hombre,Ciudad A,Secundaria,46,41023,En Contra,52,Nunca
+15,Mujer,Ciudad D,Universidad,32,52173,,21,Diario
+16,Mujer,Ciudad A,Posgrado,53,36412,Indeciso,54,Mensual
+17,Otro,Ciudad B,Posgrado,55,29900,En Contra,49,Semanal
+18,Hombre,Ciudad B,Posgrado,65,92878,En Contra,47,Mensual
+19,Hombre,Ciudad B,Posgrado,70,120207,En Contra,35,Semanal
+20,Mujer,Ciudad D,Posgrado,53,94751,A Favor,40,Mensual
+21,Hombre,Ciudad A,Universidad,19,85806,,34,Nunca
+22,Hombre,Ciudad D,Primaria,56,32515,A Favor,21,Mensual
+23,Hombre,Ciudad D,Universidad,36,74600,En Contra,20,Diario
+24,Mujer,Ciudad B,Universidad,40,115033,Indeciso,59,Nunca
+25,Mujer,Ciudad A,Posgrado,48,64899,Indeciso,38,Semanal
+26,Mujer,Ciudad C,Posgrado,40,47749,A Favor,53,Nunca
+27,Otro,Ciudad B,Posgrado,28,26709,Indeciso,20,Semanal
+28,Hombre,Ciudad B,Posgrado,58,85128,Indeciso,51,Diario
+29,Mujer,Ciudad B,Universidad,27,28210,A Favor,38,Diario
+30,Mujer,Ciudad D,Secundaria,32,40851,,47,Nunca
+31,Hombre,Ciudad A,Universidad,70,20110,Indeciso,32,Diario
+32,Hombre,Ciudad C,Secundaria,56,91923,,39,Diario
+33,Mujer,Ciudad B,Universidad,51,45825,A Favor,33,Semanal
+34,Hombre,Ciudad C,Primaria,68,77159,A Favor,40,Semanal
+35,Hombre,Ciudad B,Universidad,46,142942,Indeciso,48,Semanal
+36,Mujer,Ciudad B,Universidad,21,51409,,31,Diario
+37,Hombre,Ciudad B,Primaria,53,88983,Indeciso,25,Nunca
+38,Hombre,Ciudad C,Universidad,68,60503,En Contra,44,Semanal
+39,Mujer,Ciudad B,Secundaria,40,78301,Indeciso,31,Diario
+40,Hombre,Ciudad A,Primaria,57,122824,A Favor,34,Semanal
+41,Hombre,Ciudad D,Posgrado,63,49269,,44,Semanal
+42,Otro,Ciudad B,Universidad,59,107919,Indeciso,37,Semanal
+43,Mujer,Ciudad B,Universidad,18,140955,,29,Diario
+44,Mujer,Ciudad D,Primaria,20,85082,Indeciso,46,Semanal
+45,Hombre,Ciudad A,Secundaria,20,148967,En Contra,54,Nunca
+46,Hombre,Ciudad D,Universidad,45,86462,Indeciso,39,Mensual
+47,Hombre,Ciudad A,Universidad,65,106745,Indeciso,24,Diario
+48,Mujer,Ciudad B,Posgrado,24,65669,Indeciso,59,Semanal
+49,Hombre,Ciudad D,Secundaria,43,106163,A Favor,52,Diario
+50,Hombre,Ciudad D,Universidad,29,55269,,20,Semanal
+51,Hombre,Ciudad C,Posgrado,22,28215,,36,Mensual
+52,Hombre,Ciudad A,Posgrado,53,108428,A Favor,60,Diario
+53,Mujer,Ciudad A,Secundaria,53,103970,,56,Mensual
+54,Hombre,Ciudad C,Universidad,69,62854,Indeciso,53,Mensual
+55,Mujer,Ciudad C,Universidad,58,30326,En Contra,45,Semanal
+56,Otro,Ciudad B,Posgrado,56,81694,,28,Nunca
+57,Mujer,Ciudad D,Universidad,44,24906,Indeciso,34,Semanal
+58,Otro,Ciudad D,Universidad,22,127410,Indeciso,55,Semanal
+59,Mujer,Ciudad B,Posgrado,22,32706,,25,Mensual
+60,Mujer,Ciudad B,Posgrado,23,50175,Indeciso,39,Diario
+61,Hombre,Ciudad B,Universidad,57,134079,A Favor,47,Semanal
+62,Hombre,Ciudad B,Posgrado,51,58805,Indeciso,25,Semanal
+63,Hombre,Ciudad C,Secundaria,21,53939,,47,Diario
+64,Otro,Ciudad C,Posgrado,22,49228,,48,Nunca
+65,Hombre,Ciudad C,Universidad,56,47295,,51,Diario
+66,Otro,Ciudad A,Secundaria,61,59693,En Contra,30,Semanal
+67,Hombre,Ciudad A,Secundaria,55,53590,Indeciso,41,Mensual
+68,Hombre,Ciudad A,Universidad,42,25710,,60,Mensual
+69,Hombre,Ciudad B,Universidad,60,121215,,41,Mensual
+70,Hombre,Ciudad D,Secundaria,35,148048,En Contra,51,Nunca
+71,Hombre,Ciudad C,Secundaria,54,22825,A Favor,40,Nunca
+72,Hombre,Ciudad D,Secundaria,45,137406,En Contra,21,Nunca
+73,Hombre,Ciudad A,Primaria,60,115940,A Favor,23,Semanal
+74,Mujer,Ciudad B,Universidad,40,57687,En Contra,39,Semanal
+75,Mujer,Ciudad B,Secundaria,65,103442,,24,Diario
+76,Hombre,Ciudad B,Universidad,35,73754,A Favor,56,Nunca
+77,Hombre,Ciudad B,Posgrado,39,95694,A Favor,42,Nunca
+78,Mujer,Ciudad C,Universidad,37,55421,A Favor,55,Mensual
+79,Hombre,Ciudad D,Universidad,41,118638,,42,Mensual
+80,Mujer,Ciudad D,Universidad,56,103678,En Contra,42,Diario
+81,Mujer,Ciudad A,Universidad,19,53501,En Contra,28,Diario
+82,Otro,Ciudad C,Universidad,52,96067,,38,Semanal
+83,Mujer,Ciudad B,Universidad,49,70244,En Contra,24,Semanal
+84,Hombre,Ciudad D,Universidad,29,80099,Indeciso,24,Nunca
+85,Hombre,Ciudad B,Universidad,63,122261,Indeciso,46,Semanal
+86,Hombre,Ciudad D,Primaria,70,27709,A Favor,51,Semanal
+87,Mujer,Ciudad C,Universidad,62,26289,,49,Diario
+88,Mujer,Ciudad D,Posgrado,66,139938,Indeciso,57,Diario
+89,Mujer,Ciudad A,Universidad,33,124547,Indeciso,57,Diario
+90,Hombre,Ciudad C,Universidad,49,123812,Indeciso,25,Diario
+91,Mujer,Ciudad A,Secundaria,57,149564,En Contra,46,Semanal
+92,Mujer,Ciudad C,Secundaria,38,127649,En Contra,24,Mensual
+93,Hombre,Ciudad C,Universidad,66,103663,Indeciso,32,Semanal
+94,Hombre,Ciudad B,Universidad,32,119735,,43,Mensual
+95,Mujer,Ciudad C,Posgrado,63,81385,A Favor,34,Semanal
+96,Otro,Ciudad B,Universidad,59,121696,,40,Mensual
+97,Mujer,Ciudad D,Primaria,69,94124,,30,Nunca
+98,Hombre,Ciudad A,Universidad,46,65398,En Contra,54,Mensual
+99,Hombre,Ciudad C,Universidad,21,29982,A Favor,45,Mensual
+100,Otro,Ciudad D,Universidad,27,116198,En Contra,22,Diario
