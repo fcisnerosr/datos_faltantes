@@ -10,6 +10,7 @@ try:
 except AttributeError:
     pass
 
+
 @pd.api.extensions.register_dataframe_accessor("missing")
 class MissingMethods:
     def __init__(self, pandas_obj):
@@ -64,7 +65,7 @@ class MissingMethods:
                 pct_variables=lambda df: df.n_variables / df.n_variables.sum() * 100
             )
             .sort_values("pct_variables", ascending=False)
-        ) 
+        )
 
     #  def missing_case_table(self) -> pd.DataFrame():
     #      return (
@@ -79,12 +80,24 @@ class MissingMethods:
     def missing_case_table(self) -> pd.DataFrame:
         return (
             self._obj.missing.missing_case_summary()
-            .value_counts(subset=["n_missing"])  # Se agrupa por el número de valores faltantes
-            .to_frame(name="n_cases")  # Convierte a DataFrame y asigna nombre a la columna
+            .value_counts(
+                subset=["n_missing"]
+            )  # Se agrupa por el número de valores faltantes
+            .to_frame(
+                name="n_cases"
+            )  # Convierte a DataFrame y asigna nombre a la columna
             .reset_index()
-            .rename(columns={"n_missing": "n_missing_in_case"})  # Renombra columna correctamente
-            .assign(pct_case=lambda df: (df["n_cases"] / df["n_cases"].sum() * 100).astype(float))  # Calcula porcentaje
-            .sort_values("pct_case", ascending=False)  # Ordena por porcentaje descendente
+            .rename(
+                columns={"n_missing": "n_missing_in_case"}
+            )  # Renombra columna correctamente
+            .assign(
+                pct_case=lambda df: (df["n_cases"] / df["n_cases"].sum() * 100).astype(
+                    float
+                )
+            )  # Calcula porcentaje
+            .sort_values(
+                "pct_case", ascending=False
+            )  # Ordena por porcentaje descendente
         )
 
     def missing_variable_span(self, variable: str, span_every: int) -> pd.DataFrame:
@@ -117,15 +130,10 @@ class MissingMethods:
             {False: "complete", True: "missing"}
         )
 
-    def sort_variables_by_missingness(self, ascending = False):
+    def sort_variables_by_missingness(self, ascending=False):
 
-        return (
-            self._obj
-            .pipe(
-                lambda df: (
-                    df[df.isna().sum().sort_values(ascending = ascending).index]
-                )
-            )
+        return self._obj.pipe(
+            lambda df: (df[df.isna().sum().sort_values(ascending=ascending).index])
         )
 
     def create_shadow_matrix(
@@ -135,8 +143,7 @@ class MissingMethods:
         only_missing: bool = False,
     ) -> pd.DataFrame:
         return (
-            self._obj
-            .isna()
+            self._obj.isna()
             .pipe(lambda df: df[df.columns[df.any()]] if only_missing else df)
             .replace({False: false_string, True: true_string})
             .add_suffix("_NA")
@@ -154,10 +161,10 @@ class MissingMethods:
                 self._obj.missing.create_shadow_matrix(
                     true_string=true_string,
                     false_string=false_string,
-                    only_missing=only_missing
-                )
+                    only_missing=only_missing,
+                ),
             ],
-            axis="columns"
+            axis="columns",
         )
 
     def missing_scan_count(self, search) -> pd.DataFrame:
@@ -203,7 +210,6 @@ class MissingMethods:
         plt.ylabel("Variable")
         plt.show()  # Asegurar que la gráfica se muestre correctamente
 
-
         df = self._obj.missing.missing_case_summary()
 
         sns.displot(data=df, x="n_missing", binwidth=1, color="black")
@@ -214,14 +220,11 @@ class MissingMethods:
 
     def missing_case_plot(self):
         df = self._obj.missing.missing_case_summary().plot(
-            kind='hist',
-            x='case',
-            y='pct_missing',
-            bins=15
+            kind="hist", x="case", y="pct_missing", bins=15
         )
 
-        plt.xlabel("Number of missings in case")  
-        plt.ylabel("Number of cases")  
+        plt.xlabel("Number of missings in case")
+        plt.ylabel("Number of cases")
         plt.show()
 
     def missing_variable_span_plot(
