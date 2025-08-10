@@ -168,13 +168,13 @@ class MissingMethods:
         )
 
     def missing_scan_count(self, search) -> pd.DataFrame:
-        return (
-            self._obj.apply(axis="rows", func=lambda column: column.isin(search))
-            .sum()
-            .reset_index()
-            .rename(columns={"index": "variable", 0: "n"})
-            .assign(original_type=self._obj.dtypes.reset_index()[0])
-        )
+        hits = self._obj.apply(lambda col: col.isin(search))  # axis=0 por defecto (por columnas)
+        out = (hits.sum()
+                 .rename("n")
+                 .reset_index()
+                 .rename(columns={"index": "variable"}))
+        types = self._obj.dtypes.astype(str)
+        return out.assign(original_type=lambda d: d["variable"].map(types))
 
     # Plotting functions ---
 
