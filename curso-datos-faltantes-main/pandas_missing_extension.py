@@ -168,13 +168,13 @@ class MissingMethods:
         )
 
     def missing_scan_count(self, search) -> pd.DataFrame:
-        return (
-            self._obj.apply(axis="rows", func=lambda column: column.isin(search))
-            .sum()
-            .reset_index()
-            .rename(columns={"index": "variable", 0: "n"})
-            .assign(original_type=self._obj.dtypes.reset_index()[0])
-        )
+        hits = self._obj.apply(lambda col: col.isin(search))  # axis=0 por defecto (por columnas)
+        out = (hits.sum()
+                 .rename("n")
+                 .reset_index()
+                 .rename(columns={"index": "variable"}))
+        types = self._obj.dtypes.astype(str)
+        return out.assign(original_type=lambda d: d["variable"].map(types))
 
     # Plotting functions ---
 
@@ -267,3 +267,42 @@ class MissingMethods:
             .value_counts(variables)
             .pipe(lambda df: upsetplot.plot(df, **kwargs))
         )
+
+    def column_fill_with_dummies(
+        self,
+        variable: str,              # nombre de la columna a procesar
+        proportion_below: float = 0.10,
+        jitter: float = 0.075,
+        seed: int = 42
+    ) -> pd.Series:
+        # 1) Crear copia profunda para no alterar la serie original
+        column = self._obj[variable].copy(deep=True)
+        # El cambio de columna que procese en mi función fill_with_dummies()
+        # no cambia la serie del DataFrame original, solo la copia local.
+
+        # 2) Identificar posiciones con NaN
+        missing_mask = column.isna()           # Serie booleana: True donde había NaN
+        number_missing_values = missing_mask.sum()  # Cantidad total de NaN
+
+        # 3) Calcular rango auténtico de la serie (max – min)
+        real_min = column.min()                # Mínimo real (sin NaN)
+        real_max = column.max()                # Máximo real
+        column_range = real_max - real_min     # Diferencia para escalar el jitter
+
+        # 4) Definir 'piso' de dummies: un poco por debajo del mínimo real
+        #    Ejemplo: con proportion_below=0.10, shift = real_min – 10%·real_min
+        column_shift = real_min - (real_min * proportion_below)
+
+        # 5) Generar ruido (jitter) para cada dummy
+        #    - np.random.seed fija la semilla para reproducibilidad
+        #    - np.random.rand(n) crea n valores en [0,1)
+        #    - restar 2 pasa esos valores a [-2, -1) ⇒ desplazamiento negativo garantizado
+        #    - multiplicar por column_range * jitter ajusta la magnitud del ruido
+        np.random.seed(seed)
+        column_jitter = (np.random.rand(number_missing_values) - 2) * column_range * jitter
+
+        # 6) Asignar a cada posición NaN un valor dummy = piso + su jitter correspondiente
+        column[missing_mask] = column_shift + column_jitter
+
+        # 7) Devolver la serie modificada (mismos índices, dummies en reemplazo de NaN)
+        return column
