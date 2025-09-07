@@ -267,6 +267,7 @@ class MissingMethods:
             .value_counts(variables)
             .pipe(lambda df: upsetplot.plot(df, **kwargs))
         )
+    
 
     def column_fill_with_dummies(
         self,
@@ -306,3 +307,56 @@ class MissingMethods:
 
         # 7) Devolver la serie modificada (mismos índices, dummies en reemplazo de NaN)
         return column
+
+    def missing_scatterplot_with_dummies(
+        self,
+        x: str,
+        y: str,
+        proportion_below: float = 0.05,
+        jitter: float = 0.075,
+        seed: int = 42,
+    ):
+        """
+        Scatter bivariado con relleno dummy para NaN y coloreo por nullity (x_NA | y_NA).
+        Devuelve el Axes de seaborn.
+        """
+        # 1) Numéricas y garantizar que x,y estén incluso si no tienen NaN
+        num = self._obj.select_dtypes(exclude="category")
+        # 1) Detecta las columnas que tienen AL MENOS un NaN.
+        #    Recorremos todos los nombres en num.columns y nos quedamos con aquellos
+        #    para los que num[c].isna().any() es True.
+        cols_with_na = [c for c in num.columns if num[c].isna().any()] # Recorre los nombres de columna num y regresa los que tienen al menos un NaN
+        # 2) Construye el conjunto de columnas a conservar:
+        #    - {x, y} garantiza que las variables que quieres graficar se incluyan
+        #      aunque NO tengan NaN (de lo contrario podrían “perderse” si filtras solo por NaN).
+        #    - .union(cols_with_na) agrega todas las columnas con NaN.
+        #    - Convertimos a list(...) porque union devuelve un set (sin duplicados).
+        #    Nota: los sets no preservan orden; si quieres mantener el orden original,
+        #    usa la variante del bloque alternativo más abajo.
+        keep = list({x, y}.union(cols_with_na))
+        
+        # 3) Subselecciona únicamente esas columnas: reducimos el DataFrame a lo esencial
+        #    (x, y y las que tienen NaN) para acelerar los pasos siguientes (sombra, dummies, plot).
+        df = num[keep]
+
+        # 2) Matriz de sombras
+        df = df.missing.bind_shadow_matrix(true_string=True, false_string=False)
+
+        # 3) Relleno dummy solo en columnas NO _NA
+        def _maybe_fill(col):
+            if col.name.endswith("_NA"):
+                return col
+            # usa la función univariada que trabaja con Series
+            return column_fill_with_dummies(col, proportion_below=proportion_below,
+                                            jitter=jitter, seed=seed)
+
+        df = df.apply(_maybe_fill)
+
+        # 4) Máscara bivariada
+        df = df.assign(nullity=lambda d: d[f"{x}_NA"] | d[f"{y}_NA"])
+
+        # 5) Gráfica
+        ax = sns.scatterplot(data=df, x=x, y=y, hue="nullity")
+        return ax
+
+
